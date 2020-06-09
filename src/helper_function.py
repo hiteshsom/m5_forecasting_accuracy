@@ -7,6 +7,9 @@ from pandas.api.types import is_categorical_dtype
 def reduce_mem_usage(df, use_float16=False):
     """
     Iterate through all the columns of a dataframe and modify the data type to reduce memory usage.
+
+    :params df: data of which memory usage to be reduced
+    :return df: data with reduced memory usage
     """
 
     start_mem = df.memory_usage().sum() / 1024 ** 2

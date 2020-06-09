@@ -1,5 +1,11 @@
 # https://www.kaggle.com/ragnar123/very-fst-model
 def simple_fe_extra(data):
+    '''
+    Makes lag, rolling and time features
+
+    :param data: Training or testing data
+    :return data: Training or testing data with lag, rolling and time features
+    '''
     
     # rolling demand features
     data['lag_t56'] = data.groupby(['id'])['demand'].transform(lambda x: x.shift(56))

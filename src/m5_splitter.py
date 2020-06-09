@@ -1,6 +1,14 @@
 import numpy as np
 
 class M5Split2:
+    '''
+    Splits the data based on time keeping the train_size , val_size and step and gap_size maintained
+    Example:
+    |train + gap + val ---------------------------------------- |
+    |step - train + gap + val --------------------------------- |
+    |step step - train + gap + val ---------------------------- |
+
+    '''
     
     def __init__(self, n_splits, group_id, date_col, train_size, gap_size, val_size, step):
         self.n_splits = n_splits + 1
